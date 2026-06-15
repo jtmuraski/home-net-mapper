@@ -1,0 +1,9 @@
+<Solution>
+  <Folder Name="/Solution Items/">
+    <File Path=".gitignore" />
+    <File Path="oui.csv" />
+    <File Path="ouiJson.json" />
+  </Folder>
+  <Project Path="HomeMapper.Console/HomeMapper.Console.csproj" />
+  <Project Path="HomeMapper.Core/HomeMapper.Core.csproj" />
+</Solution>
