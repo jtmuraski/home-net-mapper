@@ -14,3 +14,5 @@ foreach(var device in devices)
 AnsiConsole.MarkupLine("");
 AnsiConsole.Markup("[green]Scan complete.[/]");
 Console.ReadLine();
+
+// Making a change to force git to track it
