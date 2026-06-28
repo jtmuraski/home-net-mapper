@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "F17Rtv+cLCM=",
+  "dgSpecHash": "PmN5YpTwO8k=",
   "success": true,
-  "projectFilePath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
+  "projectFilePath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnt\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\johnt\\.nuget\\packages\\ipnetwork2\\4.3.0\\ipnetwork2.4.3.0.nupkg.sha512",

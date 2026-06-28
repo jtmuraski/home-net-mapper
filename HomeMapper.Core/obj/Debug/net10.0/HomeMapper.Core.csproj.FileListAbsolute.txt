@@ -12,3 +12,18 @@ C:\GithubRepos\HomeMapper\HomeMapper.Core\obj\Debug\net10.0\refint\HomeMapper.Co
 C:\GithubRepos\HomeMapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.pdb
 C:\GithubRepos\HomeMapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.genruntimeconfig.cache
 C:\GithubRepos\HomeMapper\HomeMapper.Core\obj\Debug\net10.0\ref\HomeMapper.Core.dll
+C:\Github Repos\home-net-mapper\HomeMapper.Core\bin\Debug\net10.0\HomeMapper.Core.deps.json
+C:\Github Repos\home-net-mapper\HomeMapper.Core\bin\Debug\net10.0\HomeMapper.Core.runtimeconfig.json
+C:\Github Repos\home-net-mapper\HomeMapper.Core\bin\Debug\net10.0\HomeMapper.Core.dll
+C:\Github Repos\home-net-mapper\HomeMapper.Core\bin\Debug\net10.0\HomeMapper.Core.pdb
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.csproj.AssemblyReference.cache
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.AssemblyInfoInputs.cache
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.AssemblyInfo.cs
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.csproj.CoreCompileInputs.cache
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.sourcelink.json
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.dll
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\refint\HomeMapper.Core.dll
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.pdb
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.genruntimeconfig.cache
+C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\ref\HomeMapper.Core.dll

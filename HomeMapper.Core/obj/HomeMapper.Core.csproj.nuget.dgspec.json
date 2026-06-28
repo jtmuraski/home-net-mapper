@@ -1,21 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {}
+    "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {}
   },
   "projects": {
-    "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
+    "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+        "projectUniqueName": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
         "projectName": "HomeMapper.Core",
-        "projectPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+        "projectPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
         "packagesPath": "C:\\Users\\johnt\\.nuget\\packages\\",
-        "outputPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\obj\\",
+        "outputPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\johnt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Projects\\Libraries": {},
-          "C:\\Projects\\ReleaseBuilds\\FortressLogger": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -98,7 +96,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
