@@ -293,3 +293,4 @@ C:\Github Repos\home-net-mapper\HomeMapper.Console\obj\Debug\net10.0\refint\Home
 C:\Github Repos\home-net-mapper\HomeMapper.Console\obj\Debug\net10.0\HomeMapper.Console.pdb
 C:\Github Repos\home-net-mapper\HomeMapper.Console\obj\Debug\net10.0\HomeMapper.Console.genruntimeconfig.cache
 C:\Github Repos\home-net-mapper\HomeMapper.Console\obj\Debug\net10.0\ref\HomeMapper.Console.dll
+C:\GithubRepos\HomeMapper\HomeMapper.Console\obj\Debug\net10.0\HomeMapper.Console.sourcelink.json

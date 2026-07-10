@@ -27,3 +27,4 @@ C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\refint\HomeMap
 C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.pdb
 C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.genruntimeconfig.cache
 C:\Github Repos\home-net-mapper\HomeMapper.Core\obj\Debug\net10.0\ref\HomeMapper.Core.dll
+C:\GithubRepos\HomeMapper\HomeMapper.Core\obj\Debug\net10.0\HomeMapper.Core.sourcelink.json

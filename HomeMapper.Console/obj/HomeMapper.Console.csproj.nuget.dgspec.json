@@ -1,20 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\HomeMapper.Console.csproj": {}
+    "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\HomeMapper.Console.csproj": {}
   },
   "projects": {
-    "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\HomeMapper.Console.csproj": {
+    "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\HomeMapper.Console.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
+        "projectUniqueName": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
         "projectName": "HomeMapper.Console",
-        "projectPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
+        "projectPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\HomeMapper.Console.csproj",
         "packagesPath": "C:\\Users\\johnt\\.nuget\\packages\\",
-        "outputPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Console\\obj\\",
+        "outputPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Console\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\johnt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -26,7 +27,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Projects\\Libraries": {},
+          "C:\\Projects\\ReleaseBuilds\\FortressLogger": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -34,8 +36,8 @@
             "framework": "net10.0",
             "targetAlias": "net10.0",
             "projectReferences": {
-              "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
-                "projectPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj"
+              "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
+                "projectPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj"
               }
             }
           }
@@ -100,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
@@ -378,17 +380,18 @@
         }
       }
     },
-    "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
+    "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+        "projectUniqueName": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
         "projectName": "HomeMapper.Core",
-        "projectPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+        "projectPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
         "packagesPath": "C:\\Users\\johnt\\.nuget\\packages\\",
-        "outputPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\obj\\",
+        "outputPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\johnt\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -400,7 +403,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Projects\\Libraries": {},
+          "C:\\Projects\\ReleaseBuilds\\FortressLogger": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -470,7 +474,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
