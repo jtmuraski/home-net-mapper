@@ -1,5 +1,6 @@
 ﻿using PacketDotNet;
 using SharpPcap;
+using SharpPcap.LibPcap;
 using Spectre.Console;
 using System.Net;
 using System.Net.NetworkInformation;
@@ -78,14 +79,15 @@ else
 // Being the ping sweep of the network to find devices on the network. This will take a while, so we will run it in a separate thread.
 
 // Find the device with the matching MAC address of the network device
-ICaptureDevice matchingDevice = null;
+LibPcapLiveDevice matchingDevice = null;
+
 foreach (var localDevice in localDevices)
 {
     var deviceMacAddress = localDevice.MacAddress;
     if (deviceMacAddress != null && deviceMacAddress.Equals(physicalAddress))
     {
         AnsiConsole.MarkupLine($"[blue]{localDevice.Name}[/] - [green]{localDevice.Description}[/] - [yellow]{deviceMacAddress}[/]");
-        matchingDevice = localDevice;
+        matchingDevice = localDevice as LibPcapLiveDevice;
         break;
     }
 }
@@ -109,8 +111,10 @@ var listenerThread = new Thread(() =>
 // Build the sender thread
 var senderThread = new Thread(() =>
 {
-    var network = IPNetwork2.Parse(iPAddress, mask);
-    var targets = network.Up
+    // Build the list of IP addresses to ping based on the network card's IP address and subnet mask
+    var network = IPNetwork2.Parse(iPAddress, mask); // Gets the network address and subnet mask from the IP address and subnet mask of the network card
+    var targets = network.ListIPAddress(Filter.Usable); // Gets the list of usable IP addresses on the network
+
     Thread.Sleep(500); // Give the Listener a chance to start
 
     // You need three things to build the packet:
@@ -118,23 +122,30 @@ var senderThread = new Thread(() =>
     // 2. Your own IP address (the sender protocol address)  
     // 3. The target IP you're asking about
 
-    var ethernetPacket = new EthernetPacket(
-        physicalAddress,                          // your MAC
-        PhysicalAddress.Parse("FF-FF-FF-FF-FF-FF"),  // broadcast
-        EthernetType.Arp
-    );
+    foreach (var target in targets)
+    {
+        var ethernetPacket = new EthernetPacket(
+                    physicalAddress,                          // your MAC
+                    PhysicalAddress.Parse("FF-FF-FF-FF-FF-FF"),  // broadcast
+                    EthernetType.Arp
+                    );
 
-    var arpPacket = new ArpPacket(
-        ArpOperation.Request,
-        PhysicalAddress.Parse("00-00-00-00-00-00"),  // target MAC unknown (that's the point)
-        targetIp,                           // the IP we're asking about
-        physicalAddress,                          // your MAC
-        iPAddress                            // your IP
-    );
+        var arpPacket = new ArpPacket(
+            ArpOperation.Request,
+            PhysicalAddress.Parse("00-00-00-00-00-00"),  // target MAC unknown (that's the point)
+            target.MapToIPv4(),                           // the IP we're asking about
+            physicalAddress,                          // your MAC
+            iPAddress                            // your IP
+        );
 
-    ethernetPacket.PayloadPacket = arpPacket;
+        ethernetPacket.PayloadPacket = arpPacket;
+        matchingDevice.SendPacket(ethernetPacket);
+    }
 
-    device.SendPacket(ethernetPacket);
+
+    
+
+    
 });
 
 listenerThread.Start();
