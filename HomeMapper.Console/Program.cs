@@ -140,6 +140,8 @@ var senderThread = new Thread(() =>
 
         ethernetPacket.PayloadPacket = arpPacket;
         matchingDevice.SendPacket(ethernetPacket);
+
+        Thread.Sleep(5);
     }
 
 
@@ -154,6 +156,7 @@ senderThread.Start();
 senderThread.Join();
 Thread.Sleep(1500);
 matchingDevice.StopCapture();
+matchingDevice.Close();
 
 // --- Helper Methods ---
 static (IPAddress ipAddress, IPAddress mask, PhysicalAddress physicalAddress)? GetNetworkInfo(NetworkInterface networkInterface)
