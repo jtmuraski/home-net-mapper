@@ -206,7 +206,9 @@ static void PacketArrivalEventHandler(object sender, PacketCapture e, Concurrent
                 {
                     // NOTE: This is an ARP REPLY. This means that my computer is THE TARGET DEVICE
                     //       And the SENDER is the device that is responding to my computer's ARP REQUEST.
-                    discoveredDevices.TryAdd(arpPacket.SenderHardwareAddress.ToString(), arpPacket.SenderProtocolAddress);
+
+                    string formattedMac = string.Join(":", arpPacket.SenderHardwareAddress.ToString().Chunk(2).Select(c => new string(c)));
+                    discoveredDevices.TryAdd(formattedMac, arpPacket.SenderProtocolAddress);
                 }
             }
         }

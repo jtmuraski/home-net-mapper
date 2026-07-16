@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "V3oGaVVc7Fo=",
+  "dgSpecHash": "bQIBLyCOszs=",
   "success": true,
-  "projectFilePath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+  "projectFilePath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johnt\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\johnt\\.nuget\\packages\\ipnetwork2\\4.3.0\\ipnetwork2.4.3.0.nupkg.sha512",
@@ -55,9 +55,9 @@
       "code": "NU1903",
       "level": "Warning",
       "message": "Package 'SQLitePCLRaw.lib.e_sqlite3' 2.1.11 has a known high severity vulnerability, https://github.com/advisories/GHSA-2m69-gcr7-jv3q",
-      "projectPath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+      "projectPath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
       "warningLevel": 1,
-      "filePath": "C:\\GithubRepos\\HomeMapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
+      "filePath": "C:\\Github Repos\\home-net-mapper\\HomeMapper.Core\\HomeMapper.Core.csproj",
       "libraryId": "SQLitePCLRaw.lib.e_sqlite3",
       "targetGraphs": [
         "net10.0"

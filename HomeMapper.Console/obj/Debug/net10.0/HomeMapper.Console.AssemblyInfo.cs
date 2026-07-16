@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HomeMapper.Console")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e04aea9c7338ec52370c07e320f3684087a4f3ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e93e2a5c1cdd0b240dc61f4db3a2e636f222bb7c")]
 [assembly: System.Reflection.AssemblyProductAttribute("HomeMapper.Console")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HomeMapper.Console")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
