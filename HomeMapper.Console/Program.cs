@@ -2,6 +2,7 @@
 using SharpPcap;
 using SharpPcap.LibPcap;
 using Spectre.Console;
+using System.Collections.Concurrent;
 using System.Net;
 using System.Net.NetworkInformation;
 
@@ -102,7 +103,8 @@ matchingDevice.Open(DeviceModes.Promiscuous);
 matchingDevice.Filter = "arp";
 
 // Start a new thread to listen for ARP packets
-matchingDevice.OnPacketArrival += new PacketArrivalEventHandler(PacketArrivalEventHandler); // Register the event handler outside the thread. If registered INSIDE the thread, there is a chance a couple of packets sneak through
+var discoveredDevices = new ConcurrentDictionary<string, IPAddress>();
+matchingDevice.OnPacketArrival += (sender, e) => PacketArrivalEventHandler(sender, e, discoveredDevices); // Register the event handler outside the thread. If registered INSIDE the thread, there is a chance a couple of packets sneak through
 var listenerThread = new Thread(() =>
 {
     matchingDevice.StartCapture();
@@ -142,12 +144,7 @@ var senderThread = new Thread(() =>
         matchingDevice.SendPacket(ethernetPacket);
 
         Thread.Sleep(5);
-    }
-
-
-    
-
-    
+    }  
 });
 
 listenerThread.Start();
@@ -157,6 +154,11 @@ senderThread.Join();
 Thread.Sleep(1500);
 matchingDevice.StopCapture();
 matchingDevice.Close();
+
+foreach(var device in discoveredDevices)
+{
+    AnsiConsole.MarkupLine($"[blue]{device.Key}[/] - [green]{device.Value}[/]");
+}
 
 // --- Helper Methods ---
 static (IPAddress ipAddress, IPAddress mask, PhysicalAddress physicalAddress)? GetNetworkInfo(NetworkInterface networkInterface)
@@ -178,12 +180,35 @@ static (IPAddress ipAddress, IPAddress mask, PhysicalAddress physicalAddress)? G
         return (ipAddress, mask, physicalAddress);
     }
 
-static void PacketArrivalEventHandler(object sender, PacketCapture e)
+/// Parse the packet into usable information and display it to the console. This is the event handler for when a packet is captured.
+static void PacketArrivalEventHandler(object sender, PacketCapture e, ConcurrentDictionary<string, IPAddress> discoveredDevices)
 {
-    var time = e.Header.Timeval.Date;
-    var len = e.Data.Length;
-    var rawPacket = e.GetPacket();
-    AnsiConsole.WriteLine("{0}:{1}:{2},{3} Len={4}",
-        time.Hour, time.Minute, time.Second, time.Millisecond, len);
-    AnsiConsole.WriteLine(rawPacket.ToString());
+    // A raw Packet is a lot like an onion - in order to get to certain portions of the packet, you need to peel away the layers.
+    // The first layer is the Ethernet layer, which contains the MAC addresses and the type of packet (ARP, IP, etc.).
+    // The second layer is the ARP layer, which contains the IP addresses and the operation (Request or Response).
+
+    // Get the raw captured data packet
+    var rawCapture = e.GetPacket();
+
+    // Parse the raw data packet into a typed packet
+    Packet genericPacket = Packet.ParsePacket(rawCapture.LinkLayerType, rawCapture.Data);
+
+    // Extract the Ethernet layer
+    var ethernetPacket = genericPacket.Extract<EthernetPacket>();
+    if(ethernetPacket != null)
+    {
+        if (ethernetPacket.Type == EthernetType.Arp)
+        {
+            var arpPacket = ethernetPacket.Extract<ArpPacket>();
+            if (arpPacket != null)
+            {
+                if (arpPacket.Operation == ArpOperation.Response)
+                {
+                    // NOTE: This is an ARP REPLY. This means that my computer is THE TARGET DEVICE
+                    //       And the SENDER is the device that is responding to my computer's ARP REQUEST.
+                    discoveredDevices.TryAdd(arpPacket.SenderHardwareAddress.ToString(), arpPacket.SenderProtocolAddress);
+                }
+            }
+        }
+    }
 }
