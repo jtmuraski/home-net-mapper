@@ -4,7 +4,8 @@ using System.Text;
 
 namespace HomeMapper.Core.Services
 {
-    internal class OuiLookup
+    public static class OuiLookup
     {
+
     }
 }
