@@ -3,6 +3,7 @@ using SharpPcap;
 using SharpPcap.LibPcap;
 using Spectre.Console;
 using System.Collections.Concurrent;
+using System.Diagnostics;
 using System.Net;
 using System.Net.NetworkInformation;
 
@@ -147,6 +148,10 @@ var senderThread = new Thread(() =>
     }  
 });
 
+AnsiConsole.MarkupLine("Sending ARP requests to all devices on the network...");
+Stopwatch stopwatch = Stopwatch.StartNew();
+stopwatch.Start();
+
 listenerThread.Start();
 senderThread.Start();
 
@@ -155,7 +160,11 @@ Thread.Sleep(1500);
 matchingDevice.StopCapture();
 matchingDevice.Close();
 
-foreach(var device in discoveredDevices)
+stopwatch.Stop();
+
+AnsiConsole.MarkupLine($"[green]ARP requests completed in {stopwatch.ElapsedMilliseconds} ms");
+
+foreach (var device in discoveredDevices)
 {
     AnsiConsole.MarkupLine($"[blue]{device.Key}[/] - [green]{device.Value}[/]");
 }
